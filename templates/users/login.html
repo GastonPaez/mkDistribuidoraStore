@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col">
+  <h2>Login</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-gruop">
+      <label for="username">Usuario</label>
+      <input type="text" name="username" class="form-control" id="" />
+    </div>
+
+    <div class="form-gruop">
+      <label for="password">Contraseña</label>
+      <input type="text" name="password" class="form-control" id="" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>
+{% endblock %}

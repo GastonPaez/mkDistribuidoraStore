@@ -1,0 +1,11 @@
+<form action="{% url 'products:search' %} ">
+    <div class="input-group">
+        <!-- Se busca los producto con la q desde el queryset -->        
+        <input class="form-control" type="text" name="q" value="{{ query }}" placeholder="Buscar">
+        <div class="input-group-append">
+            <input type="submit" value="Buscar" class="btn btn-primary" >
+        </div>
+    </div>
+</form>
+
+<!-- formulario con input nombre q que envia la informacion a travez del queryset por el metodo GET -->

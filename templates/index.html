@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+      
+      <div class="col">        
+      <h4 class="text-center">{{ message }}</h4>  
+      {% include 'products/snippets/search.html' %}
+
+      {% include 'products/snippets/list.html' %}
+        
+      
+      <img
+      src="https://marzin.com.ar/assets/uploads/files/dd6d4-5561b.jpg"
+      alt=""
+      class="rounded mx-auto d-block"
+      style="height: 10"
+    />
+      </div>      
+  
+
+{% endblock %}

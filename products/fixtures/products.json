@@ -1,0 +1,38 @@
+[
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "vedetina lisa",
+        "description": "vedetina lisa marcela koury",
+        "price": "140.00",
+        "slug": "vedetina-lisa",
+        "image": "products/pack-x3-vedetinas-en-microfibra-lisa.jpg",
+        "created_at": "07:27:35.849"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "title": "colaless lisa",
+        "description": "colaless lisa marcela koury",
+        "price": "189.00",
+        "slug": "colaless-lisa",
+        "image": "products/colaless-en-microfibra-lisa-pack-x-3.jpg",
+        "created_at": "07:42:17.428"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "title": "culoteless liso",
+        "description": "culote less liso marcela koury",
+        "price": "188.00",
+        "slug": "culoteless-liso",
+        "image": "products/pack-x2-culotteless-en-microfibra-lisa-y-estampado-ddm.jpg",
+        "created_at": "07:49:29.879"
+    }
+}
+]
