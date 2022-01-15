@@ -4,22 +4,12 @@ from django.db.models.enums import Choices
 from django.db.models.fields import CharField
 from users.models import User
 from carts.models import Cart
-from enum import Enum
+
 from django.db.models.signals import pre_save
 import uuid
 from shipping_addresses.models import ShippingAddress
+from .common import OrderStatus, choices
 # Create your models here.
-
-
-class OrderStatus(Enum):
-    CREATED = 'CREATED'
-    PAYED = 'PAYED'
-    COMPLETED = 'COMPLETED'
-    CANCELED = 'CANCELED'
-
-
-choices = [(tag, tag.value) for tag in OrderStatus]
-
 
 class Order(models.Model):
     order_id = CharField(max_length=100, null=False, blank=False, unique=True)
