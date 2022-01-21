@@ -6,6 +6,7 @@
 {% url 'shipping_addresses:shipping_addresses' as shipping_addresses %}
 {% url 'index' as index %}
 {% url 'orders:completeds' as completeds %}
+{% url 'billing_profiles:create' as billing_profiles %}
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
      <a href="{{ index }} " class="navbar-brand"> Distribuidora MK </a>
@@ -24,8 +25,11 @@
             <li class="nav-item {% if request.path == shipping_addresses %}active{% endif %}">
                 <a href="{{ shipping_addresses }}"" class='nav-link' >Mis Direcciones <span class="fas fa-location-arrow"></span></a>
             </li>
-            <li class="nav-item {% if request.path == shipping_addresses %}active{% endif %}">
+            <li class="nav-item {% if request.path == completeds %}active{% endif %}">
                 <a href="{{ completeds }}"" class='nav-link' >Mis Pedidos <span class="fas fa-shopping-bag"></span></a>
+            </li>
+            <li class="nav-item {% if request.path == billing_profiles %}active{% endif %}">
+                <a href="{{ billing_profiles }}"" class='nav-link' >Mis Metodos de Pago <span class="fas fa-money-check-alt"></span></a>
             </li>
             {% endif %}
         </ul>
