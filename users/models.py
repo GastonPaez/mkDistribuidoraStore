@@ -1,3 +1,5 @@
+from email.policy import default
+from operator import truediv
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from orders.common import OrderStatus
@@ -9,7 +11,7 @@ from orders.common import OrderStatus
 #AbstractUser para heredar y modificar atributos por defecto
 #Se debe cambiar el User importado en todos los lados que aparece
 class User(AbstractUser):
-
+    
     def get_full_name(self):
         return '{} {}'.format(self.first_name, self.last_name)
 
@@ -17,6 +19,10 @@ class User(AbstractUser):
     def shipping_address(self):
         # Para conocer si posee o no una direccion principal
         return self.shippingaddress_set.filter(default=True).first()
+    
+    @property
+    def billing_profile(self):
+        return self.billingprofile_set.filter(default=True).first()
 
     def has_shipping_address(self):
         # Si el usuario posee o no una direccion principal
@@ -29,9 +35,16 @@ class User(AbstractUser):
         # para concoer si el usuario tiene direcciones
         return self.shippingaddress_set.exists()
     
+    
+    
     @property
     def addresses(self):
         return self.shippingaddress_set.all()
+
+    @property
+    def billing_profiles(self):
+        return self.billing_profile_set.all().order_by('-default')
+
 
 
 

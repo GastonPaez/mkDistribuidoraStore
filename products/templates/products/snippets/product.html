@@ -1,3 +1,4 @@
+{% load product_extras %}
 <div class="card h-100">
     {% if product.image%}
       <img src="{{ product.image.url }} " alt="Imagen del producto">
@@ -6,9 +7,10 @@
       <h5 class="card-title">
         {{ product.title}}
       </h5>
-      <p class="card-text">
-        {{ product.description }}
-      </p>
+      <p class="card-subtitle ">
+        <span class="text-success">{{ product.price | price_format }}</span>
+              </p>
+
       <a href="{% url 'products:product' product.slug %} " class="btn btn-primary" >
         Ver mas
       </a>

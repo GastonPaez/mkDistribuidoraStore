@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+        {% if billing_profile %}
+        <h5 class="card-title">
+            {{ billing_profiles.brand }}            
+        </h5>
+        <h6 class="card-subtitle">
+            Terminacion {{ billing_profiles.las4 }}
+        </h6>
+        <div class="mt-2 text-info">
+            {% if billing_profiles.default %}
+                Direccion principal
+            {% endif %}
+
+        </div>
+        {% endif %}
+    </div>
+</div>

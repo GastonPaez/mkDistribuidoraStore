@@ -12,5 +12,6 @@ urlpatterns = [
     path('cancelar', views.cancel, name='cancel'),
     path('completar', views.complete, name='complete'),
     path('completados', views.OrderListView.as_view(), name='completeds'),
+    path('pago', views.payment, name='payment')
 
 ]
