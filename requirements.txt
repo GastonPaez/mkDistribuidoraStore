@@ -50,7 +50,7 @@ Pillow==8.2.0
 prometheus-client==0.10.1
 prompt-toolkit==3.0.18
 psycopg==3.0.3
-psycopg2==3.0.3
+
 pycodestyle==2.7.0
 pycparser==2.20
 pyflakes==2.3.1
