@@ -4,6 +4,7 @@ from django.forms.widgets import EmailInput
 #from django.contrib.auth.models import User
 from users.models import User
 
+
 class RegisterForm(forms.Form):
     username = forms.CharField(required=True, min_length=4, max_length=25, label='Usuario', widget=forms.TextInput(
         attrs={'class': 'form-control', 'id': 'username', 'placeholder': 'Usuario'}))
