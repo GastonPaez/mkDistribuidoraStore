@@ -11,20 +11,14 @@
     <div class="h1">
         {{ product.title }}
     </div>
-    <div>
-        <p>{{ product.article }} </p>
-    </div>
-    <div class="h5 font-weigth-bold" >
-        Color: <span class="">
-            {{product.type_color}}
-        </span> 
-
-    </div>
     <div class="h5 font-weigth-bold" >
         Precio: <span class="text-danger">
             {{product.price}}
         </span> 
 
+    </div>
+    <div>
+        <p>{{ product.description }} </p>
     </div>
     <div>
         {% include 'carts/snippets/add.html' %}

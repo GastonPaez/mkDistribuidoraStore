@@ -15,19 +15,7 @@ class ProductListView(ListView):
         context['message'] = 'Listado de productos'
         context['products'] = context['product_list']
         return context
-
-class ListProduct(ListView):
-    template_name = 'webproducts.html'
-    # La consulta para obtener el listado de objetos
-    queryset = Product.objects.all().order_by('-id')
- 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['message'] = 'Listado de productos'
-        context['products'] = context['product_list']
-        return context
-
-
+        
 class ProductDetailView(DetailView):
     # Obtiene un objeto y un registro mediante un identificador por default
     model = Product

@@ -108,7 +108,6 @@ def cancel(request, cart, order):
 @login_required(login_url='login')
 @validate_cart_and_order
 def complete(request, cart, order):
-
     
     if request.user.id != order.user_id:
         return redirect('carts:cart')
@@ -124,17 +123,3 @@ def complete(request, cart, order):
 
     messages.success(request, 'Compra completada exitosamente')
     return redirect('index')
-
-
-@login_required(login_url='login')
-@validate_cart_and_order 
-def payment(request, cart, order):
-
-    billing_profile = order.get_or_set_billing_profile()
-
-    return render(request, 'orders/payment.html', {
-        'cart':cart,
-        'order':order,
-        'billing_profile': billing_profile,
-        'breadcrumb': breadcrumb(address=True, payment=True)
-    })

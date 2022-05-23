@@ -1,4 +1,3 @@
-from turtle import ondrag
 from unicodedata import decimal
 from django.db import models
 from django.db.models.fields import CharField
@@ -10,7 +9,6 @@ import uuid
 from shipping_addresses.models import ShippingAddress
 from .common import OrderStatus, choices
 import decimal
-from billing_profiles.models import BillingProfile
 # Create your models here.
 
 
@@ -32,7 +30,6 @@ class Order(models.Model):
 
     promo_code = models.OneToOneField(PromoCode, null=True, blank=True,
                                         on_delete=models.CASCADE)
-    billing_profile = models.ForeignKey(BillingProfile, null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.order_id
@@ -57,22 +54,8 @@ class Order(models.Model):
             self.update_shipping_address(shipping_address)
         return shipping_address
 
-    def get_or_set_billing_profile(self):
-        if self.billing_profile:
-            return self.billing_profile
-        
-        billing_profile = self.user.billing_profile
-        if billing_profile:
-            self.update_billing_profile(billing_profile)
-
-        return billing_profile
-
     def update_shipping_address(self, shipping_address):
         self.shipping_address = shipping_address
-        self.save()
-
-    def update_billing_profile(self, billing_profile):
-        self.billing_profile = billing_profile
         self.save()
 
     def cancel(self):

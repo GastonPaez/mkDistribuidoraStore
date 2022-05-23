@@ -17,7 +17,7 @@ from xml.dom.minidom import Document
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
-from products.views import ProductListView, ListProduct
+from products.views import ProductListView
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -29,7 +29,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('', views.index, name='index'),
     path('', ProductListView.as_view(), name='index'),
-    path('listado-productos', ListProduct.as_view(), name='webproduct'),
     path('usuarios/login', views.login_user, name='login'),
     path('usuarios/logout', views.logout_view, name='logout'),
     path('usuarios/register', views.register, name='register'),
