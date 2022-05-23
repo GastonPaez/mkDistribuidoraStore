@@ -78,5 +78,5 @@ wcwidth==0.2.5
 webencodings==0.5.1
 whitenoise==6.1.0
 widgetsnbextension==3.5.1
-Django==3.2.5
+Django==4.0.4
 psycopg2==2.9.3
